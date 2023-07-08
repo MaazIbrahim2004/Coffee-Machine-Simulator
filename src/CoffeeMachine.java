@@ -2,14 +2,11 @@ import java.util.Scanner;
 
 public class CoffeeMachine {
     int water;
-    // don't need to be static as they are instance variables. Also default constructor is public, it can be accessed from anywhere.
-    // So values will be updated when methods are chosen, and we can access them from anywhere
     int milk;
     int coffeeBeans;
     int cups;
     int money;
-    // constructor initializes the instance variables (objects of the class) when the object is created. This allows us to use the methods and variables without making them static
-    public CoffeeMachine(int water, int milk, int coffeeBeans, int cups, int money) { // to allow the instance variables to update, we need to pass them as arguments to the constructor
+    public CoffeeMachine(int water, int milk, int coffeeBeans, int cups, int money) { 
         this.water = water;
         this.milk = milk;
         this.coffeeBeans = coffeeBeans;
@@ -20,8 +17,7 @@ public class CoffeeMachine {
     public void run() {
         Scanner scanner = new Scanner(System.in);
         boolean runningProgram = true;
-        CoffeeMachine coffeeMachine = new CoffeeMachine(water, milk, coffeeBeans, cups, money); //Create object of class to access non-static methods
-        // we don't create multiple objects inside the loop because we don't want to create multiple objects, we just want to create one object and use it to access the methods
+        CoffeeMachine coffeeMachine = new CoffeeMachine(water, milk, coffeeBeans, cups, money); 
 
         while (runningProgram) {
             System.out.println("Write action (buy, fill, take, remaining, exit):");
@@ -52,19 +48,18 @@ public class CoffeeMachine {
     }
 
 
-    public void buy(Scanner scanner) { // we pass scanner object as parameter so that we can use it in this method, to avoid creating multiple scanner objects
+    public void buy(Scanner scanner) { // we pass scanner object as parameter to avoid creating multiple scanner objects
 
         System.out.println("What do you want to buy? 1 - espresso, 2 - latte, 3 - cappuccino, back - to main menu:");
         String buy = scanner.nextLine();
         switch (buy) {
             case "1":
-                if (water >= 100 && coffeeBeans >= 16 && cups >= 1) { // we can use the instance variables thanks to the constructor, which allows us to access them from anywhere in the class
-                    // it also allows us to update the values of the instance variables when the methods are chosen
+                if (water >= 100 && coffeeBeans >= 16 && cups >= 1) { 
                     System.out.println("I have enough resources, making you a coffee!");
                     water -= 250;
                     coffeeBeans -= 16;
                     cups -= 1;
-                    money += 4; //we add money because someone is buying coffee from us
+                    money += 4; 
                 } else {
                     System.out.println("Sorry, not enough water!");
                 }
