@@ -54,7 +54,7 @@ public class CoffeeMachine {
         String buy = scanner.nextLine();
         switch (buy) {
             case "1":
-                if (water >= 100 && coffeeBeans >= 16 && cups >= 1) { 
+                if (water >= 250 && coffeeBeans >= 16 && cups >= 1) { 
                     System.out.println("I have enough resources, making you a coffee!");
                     water -= 250;
                     coffeeBeans -= 16;
