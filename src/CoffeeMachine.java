@@ -1,11 +1,12 @@
 import java.util.Scanner;
 
 public class CoffeeMachine {
-    int water;
-    int milk;
-    int coffeeBeans;
-    int cups;
-    int money;
+    private int water;
+    private int milk;
+    private int coffeeBeans;
+    private int cups;
+    private int money;
+    
     public CoffeeMachine(int water, int milk, int coffeeBeans, int cups, int money) { 
         this.water = water;
         this.milk = milk;
